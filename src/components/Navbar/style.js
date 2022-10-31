@@ -27,6 +27,8 @@ const LinkWrapper = styled.div`
   a {
     text-decoration: none;
     color: white;
+    display: flex;
+    gap: 10px;
   }
   .active {
     color: #fcf300;
