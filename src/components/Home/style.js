@@ -132,9 +132,11 @@ const Time = styled.div`
   border: 2px solid #003566;
   border-radius: 5px;
   margin-right: 4rem;
-  background-color: #ededed;
+  background-color: #003566;
   padding: 3px 8px;
-  color: #003566;
+  color: #ffcb05;
+  width: 135px;
+  height: 49px;
 `;
 export {
   Container,

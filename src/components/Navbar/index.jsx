@@ -1,14 +1,26 @@
 import React from "react";
 import { NavLink, Outlet } from "react-router-dom";
-import { Container, LinkWrapper, Wrapper } from "./style";
-import { AiOutlineHome } from "react-icons/ai";
-import { AiOutlineUser } from "react-icons/ai";
-import { AiOutlineProject } from "react-icons/ai";
+import {
+  Boots,
+  Container,
+  Hat,
+  Head,
+  LeftHand,
+  LinkWrapper,
+  RightHand,
+  Wrapper,
+} from "./style";
+import { AiOutlineHome, AiOutlineUser, AiOutlineProject } from "react-icons/ai";
+
 const Navbar = () => {
   return (
     <Wrapper>
       <Container>
-        <h1>Orzumand</h1>
+        <Hat />
+        <Head />
+        {/* <h1>Orzumand</h1> */}
+        <LeftHand />
+        <RightHand />
         <LinkWrapper>
           <NavLink to={"/home"}>
             <AiOutlineHome />
@@ -24,7 +36,7 @@ const Navbar = () => {
           </NavLink>
         </LinkWrapper>
 
-        <h3>mini footer</h3>
+        <Boots />
       </Container>
       <Outlet />
     </Wrapper>
