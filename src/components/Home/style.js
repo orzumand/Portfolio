@@ -138,6 +138,9 @@ const Time = styled.div`
   color: #ffcb05;
   width: 135px;
   height: 49px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 export {
   Container,

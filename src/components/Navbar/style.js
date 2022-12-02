@@ -13,7 +13,6 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-
   position: relative;
   border-bottom: 15px solid #ffc300;
   h1 {
@@ -33,7 +32,7 @@ const LinkWrapper = styled.div`
     padding: 12px;
     text-decoration: none;
     color: #97a4c5;
-    display: flex;
+    font-size: 20px;
     gap: 10px;
     width: 100%;
     height: 30px;
