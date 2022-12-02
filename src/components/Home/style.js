@@ -101,6 +101,7 @@ const IconsCon = styled.div`
   a {
     transition: 0.5s;
     text-decoration: none;
+    color: #551a8b;
   }
 `;
 
