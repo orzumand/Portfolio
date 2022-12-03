@@ -8,13 +8,13 @@ const Container = styled.div`
   flex-direction: column;
   color: #219ebc;
   align-items: center;
+  .yellow {
+    color: #ffb703;
+  }
 `;
 
 const Text = styled.div`
   font-size: 20px;
-  .yellow {
-    color: #ffb703;
-  }
   /* border: 2px solid red; */
   display: flex;
 `;
