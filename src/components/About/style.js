@@ -15,8 +15,11 @@ const Container = styled.div`
 
 const Text = styled.div`
   font-size: 20px;
-  /* border: 2px solid red; */
+
   display: flex;
+  width: 100%;
+  justify-content: center;
+  padding: 0px 100px;
 `;
 
 export { Container, Text };
