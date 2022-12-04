@@ -8,18 +8,25 @@ const Container = styled.div`
   flex-direction: column;
   color: #219ebc;
   align-items: center;
+
+  padding: 20px 100px;
+  position: relative;
   .yellow {
     color: #ffb703;
   }
 `;
 
-const Text = styled.div`
+const Text = styled.p`
   font-size: 20px;
-
-  display: flex;
+  text-align: center;
   width: 100%;
-  justify-content: center;
-  padding: 0px 100px;
 `;
-
-export { Container, Text };
+const Tooday = styled.div`
+  font-size: 20px;
+  flex-wrap: nowrap;
+  position: absolute;
+  display: flex;
+  bottom: 40px;
+  right: 50px;
+`;
+export { Container, Text, Tooday };
