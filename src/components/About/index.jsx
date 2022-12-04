@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import { Container, Text } from "./style";
+import { Container, Text, Tooday } from "./style";
 
 const About = () => {
   const [old, setOld] = useState("");
@@ -11,7 +11,7 @@ const About = () => {
 
   const TotalSeconds = (currentDate - newYearDate) / 1000;
   const year = Math.floor(TotalSeconds / 3600 / 24 / 365);
-  const month = Math.floor(TotalSeconds / 3600 / 730) % 12;
+  const month = Math.floor(TotalSeconds / 3600 / 730.5) % 12;
   const days = Math.floor(TotalSeconds / 3600 / 24) % 24;
   const hours = Math.floor(TotalSeconds / 3600) % 24;
   const minutes = Math.floor(TotalSeconds / 60) % 60;
@@ -51,14 +51,16 @@ const About = () => {
     <Container>
       <h1> About Me </h1>
       <Text>
-        Hi, my full name is '' Hayotbek Yo'ldashev'', I was born in Kashkadarya
-        region, O'zbekistan in 2000. I'm
-        <br /> {old}
-        <br /> years old.
+        Hi, my full name is <div className="yellow">Hayotbek Yo'ldashev,</div>I
+        was born in Kashkadarya region, O'zbekistan in 2000. My old is
+        <div className="yellow">{old}.</div>I am very friendly, but only with
+        people that I think are quite good.I happen really impatient and
+        curious, <br />
+        but I do not consider it a disadvantage.
       </Text>
-      <Text>
-        Tooday : <div className="yellow"> {date}</div>
-      </Text>
+      <Tooday>
+        Tooday:"<div className="yellow">{date}</div>"
+      </Tooday>
     </Container>
   );
 };

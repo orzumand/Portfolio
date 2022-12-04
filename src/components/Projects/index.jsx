@@ -5,7 +5,7 @@ import { Container } from "./style";
 const Projects = () => {
   return (
     <Container>
-      <h1>Projects</h1>
+      <h1>This is my Projects Page</h1>
       <Timer />
     </Container>
   );
