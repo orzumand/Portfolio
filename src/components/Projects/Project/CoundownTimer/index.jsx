@@ -9,7 +9,7 @@ const Timer = () => {
   const [Time, setTime] = useState("");
   const [day, setDay] = useState("");
   const [month, setMonth] = useState("");
-  const newYears = `${month} ${day}, ${year} 23:59:0`;
+  const newYears = `${month} ${day}, ${year} 00:00:0`;
   const newYearDate = new Date(newYears);
   const TotalSeconds = (newYearDate - currentDate) / 1000;
 
@@ -61,6 +61,46 @@ const Timer = () => {
       <input type="number" onChange={(e) => onChange(e)} />
       <h2>{day}</h2>
       <h2>{month}</h2>
+      <h1>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto,
+        impedit.
+      </h1>
+      <h1>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto,
+        impedit.
+      </h1>
+      <h1>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto,
+        impedit.
+      </h1>
+      <h1>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto,
+        impedit.
+      </h1>
+      <h1>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto,
+        impedit.
+      </h1>
+      <h1>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto,
+        impedit.
+      </h1>
+      <h1>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto,
+        impedit.
+      </h1>
+      <h1>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto,
+        impedit.
+      </h1>
+      <h1>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto,
+        impedit.
+      </h1>
+      <h1>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto,
+        impedit.
+      </h1>
     </Container>
   );
 };
