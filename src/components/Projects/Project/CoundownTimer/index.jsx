@@ -1,15 +1,12 @@
 import React, { useEffect, useState } from "react";
 
-import { Container } from "./style";
+import { Container, TimerWrap } from "./style";
 
 const Timer = () => {
   const currentDate = new Date();
-  const year = currentDate.getFullYear();
-
   const [Time, setTime] = useState("");
-  const [day, setDay] = useState("");
-  const [month, setMonth] = useState("");
-  const newYears = `${month} ${day}, ${year} 00:00:0`;
+  const [date, setDate] = useState("");
+  const newYears = `${date} 00:00:0`;
   const newYearDate = new Date(newYears);
   const TotalSeconds = (newYearDate - currentDate) / 1000;
 
@@ -19,88 +16,33 @@ const Timer = () => {
   const seconds = Math.floor(TotalSeconds) % 60;
   useEffect(() => {
     const TimeId = setInterval(() => {
-      setTime(`${days}day,${hours}hours,${minutes}minutes,${seconds}seconds`);
+      setTime({
+        days: isNaN(days) ? 0 : days,
+        hours: isNaN(formatTime(hours)) ? 0 : hours,
+        minutes: isNaN(formatTime(minutes)) ? 0 : minutes,
+        seconds: isNaN(formatTime(seconds)) ? 0 : seconds,
+      });
     }, 1000);
     return function cleeanup() {
       clearInterval(TimeId);
     };
   });
+  function formatTime(time) {
+    return time < 10 ? `0${time}` : time;
+  }
   const onSelect = (e) => {
-    setMonth(e.target.value);
+    setDate(e.target.value);
   };
-  const onChange = (e) => {
-    if (e.target.value > 0 && e.target.value <= 31) {
-      setDay(e.target.value);
-    }
-  };
+  console.log(Time);
   return (
     <Container>
-      <h1>{Time}</h1>
-      {year}
+      <TimerWrap>
+        {Time.seconds >= 0 ? Time.seconds : "Enter The Next Birthday"}
+      </TimerWrap>
 
-      <label>Choose a Month:</label>
-      <select
-        defaultValue={"Choose"}
-        onChange={(e) => onSelect(e)}
-        id="month"
-        name="Months"
-      >
-        <option value="January">January</option>
-        <option value="February">February</option>
-        <option value="March">March</option>
-        <option value="April">April</option>
-        <option value="May">May</option>
-        <option value="June">June</option>
-        <option value="July">July</option>
-        <option value="August">August</option>
-        <option value="September">September</option>
-        <option value="October">October</option>
-        <option value="November">November</option>
-        <option value="December">December</option>
-      </select>
-      <input type="number" onChange={(e) => onChange(e)} />
-      <h2>{day}</h2>
-      <h2>{month}</h2>
-      <h1>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto,
-        impedit.
-      </h1>
-      <h1>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto,
-        impedit.
-      </h1>
-      <h1>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto,
-        impedit.
-      </h1>
-      <h1>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto,
-        impedit.
-      </h1>
-      <h1>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto,
-        impedit.
-      </h1>
-      <h1>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto,
-        impedit.
-      </h1>
-      <h1>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto,
-        impedit.
-      </h1>
-      <h1>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto,
-        impedit.
-      </h1>
-      <h1>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto,
-        impedit.
-      </h1>
-      <h1>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto,
-        impedit.
-      </h1>
+      <input type="date" onChange={(e) => onSelect(e)} />
+
+      <h2>{date}</h2>
     </Container>
   );
 };
