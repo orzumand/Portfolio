@@ -18,9 +18,9 @@ const Timer = () => {
     const TimeId = setInterval(() => {
       setTime({
         days: isNaN(days) ? 0 : days,
-        hours: isNaN(formatTime(hours)) ? 0 : hours,
-        minutes: isNaN(formatTime(minutes)) ? 0 : minutes,
-        seconds: isNaN(formatTime(seconds)) ? 0 : seconds,
+        hours: isNaN(hours) ? 0 : hours,
+        minutes: isNaN(minutes) ? 0 : minutes,
+        seconds: isNaN(seconds) ? 0 : seconds,
       });
     }, 1000);
     return function cleeanup() {
@@ -37,7 +37,31 @@ const Timer = () => {
   return (
     <Container>
       <TimerWrap>
-        {Time.seconds >= 0 ? Time.seconds : "Enter The Next Birthday"}
+        {Time.seconds > 0 ? (
+          <TimerWrap.Nums>
+            <div>
+              {Time.days}:
+              <br /> Days
+            </div>
+            <div>
+              {formatTime(Time.hours)}
+              <br />
+              Hours
+            </div>
+            <div>
+              {formatTime(Time.minutes)}
+              <br />
+              Minutes
+            </div>
+            <div>
+              {formatTime(Time.seconds)}
+              <br />
+              Seconds
+            </div>
+          </TimerWrap.Nums>
+        ) : (
+          "Please Enter Your Next Birthday"
+        )}
       </TimerWrap>
 
       <input type="date" onChange={(e) => onSelect(e)} />
